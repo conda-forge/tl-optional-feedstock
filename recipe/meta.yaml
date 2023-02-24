@@ -1,4 +1,4 @@
-{% set version = "1.0.0" %}
+{% set version = "1.1.0" %}
 
 package:
   name: tl-optional
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/TartanLlama/optional/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: e18941da05bca12a796ebbeacb83993bc0f10e817fa10bb45124a421c2384690
+  sha256: 88ece79f3de5ccaec4191951a222f95cc80c4381dafd3163bdb1ff87cedf3118
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
