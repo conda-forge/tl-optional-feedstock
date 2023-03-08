@@ -1,0 +1,13 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index a382ace..f2d5d97 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -74,7 +74,7 @@ if (OPTIONAL_BUILD_TESTS)
+   set(CATCH_BUILD_TESTING OFF)
+   set(CATCH_INSTALL_DOCS OFF)
+   FetchContent_Declare(Catch2 URL
+-    https://github.com/catchorg/Catch2/archive/v2.9.2.zip) 
++    https://github.com/catchorg/Catch2/archive/v2.13.9.zip) 
+   FetchContent_MakeAvailable(Catch2)
+ 
+   file(GENERATE OUTPUT catch.main.cpp

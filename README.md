@@ -1,11 +1,11 @@
-About tl-optional
-=================
+About tl-optional-feedstock
+===========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/tl-optional-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/TartanLlama/optional
 
 Package license: CC0-1.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/tl-optional-feedstock/blob/main/LICENSE.txt)
 
 Summary: C++11/14/17 std::optional with functional-style extensions and reference support
 
@@ -13,14 +13,7 @@ Current build status
 ====================
 
 
-<table><tr>
-    <td>Travis</td>
-    <td>
-      <a href="https://app.travis-ci.com/conda-forge/tl-optional-feedstock">
-        <img alt="linux" src="https://img.shields.io/travis/com/conda-forge/tl-optional-feedstock/main.svg?label=Linux">
-      </a>
-    </td>
-  </tr>
+<table>
     
   <tr>
     <td>Azure</td>
@@ -59,6 +52,13 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13096&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tl-optional-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13096&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tl-optional-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_" alt="variant">
                 </a>
               </td>
             </tr><tr>

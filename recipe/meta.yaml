@@ -7,9 +7,11 @@ package:
 source:
   url: https://github.com/TartanLlama/optional/archive/refs/tags/v{{ version }}.tar.gz
   sha256: 88ece79f3de5ccaec4191951a222f95cc80c4381dafd3163bdb1ff87cedf3118
+  patches:
+    - bump_catch.patch
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
