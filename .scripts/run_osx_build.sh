@@ -24,9 +24,9 @@ source ${MINIFORGE_HOME}/etc/profile.d/conda.sh
 conda activate base
 
 mamba install --update-specs --quiet --yes --channel conda-forge \
-    conda-build pip boa conda-forge-ci-setup=3 "py-lief<0.12"
+    conda-build pip boa conda-forge-ci-setup=3
 mamba update --update-specs --yes --quiet --channel conda-forge \
-    conda-build pip boa conda-forge-ci-setup=3 "py-lief<0.12"
+    conda-build pip boa conda-forge-ci-setup=3
 
 
 
@@ -54,6 +54,32 @@ source run_conda_forge_build_setup
 
 echo -e "\n\nMaking the build clobber file"
 make_build_number ./ ./recipe ./.ci_support/${CONFIG}.yaml
+
+if [[ "${HOST_PLATFORM}" != "${BUILD_PLATFORM}" ]]; then
+    EXTRA_CB_OPTIONS="${EXTRA_CB_OPTIONS:-} --no-test"
+fi
+
+
+if [[ -f LICENSE.txt ]]; then
+  cp LICENSE.txt "recipe/recipe-scripts-license.txt"
+fi
+
+if [[ "${BUILD_WITH_CONDA_DEBUG:-0}" == 1 ]]; then
+    if [[ "x${BUILD_OUTPUT_ID:-}" != "x" ]]; then
+        EXTRA_CB_OPTIONS="${EXTRA_CB_OPTIONS:-} --output-id ${BUILD_OUTPUT_ID}"
+    fi
+    conda debug ./recipe -m ./.ci_support/${CONFIG}.yaml \
+        ${EXTRA_CB_OPTIONS:-} \
+        --clobber-file ./.ci_support/clobber_${CONFIG}.yaml
+
+    # Drop into an interactive shell
+    /bin/bash
+else
+    conda mambabuild ./recipe -m ./.ci_support/${CONFIG}.yaml \
+        --suppress-variables ${EXTRA_CB_OPTIONS:-} \
+        --clobber-file ./.ci_support/clobber_${CONFIG}.yaml
+    ( startgroup "Validating outputs" ) 2> /dev/null
+
     validate_recipe_outputs "${FEEDSTOCK_NAME}"
 
     ( endgroup "Validating outputs" ) 2> /dev/null
