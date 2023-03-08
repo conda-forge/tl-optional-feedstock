@@ -42,7 +42,7 @@ Current build status
               </td>
             </tr><tr>
               <td>linux_aarch64</td>
-              <td>
+              <td>https://github.com/conda-forge/tl-optional-feedstock/pull/3/conflict?name=recipe%252Fmeta.yaml&ancestor_oid=da3acfde9a568013df142cfd55292316beef9c53&base_oid=66e8a483a65fc78bb4d9bb31c38047035b78b952&head_oid=d27035e45f0d371772b680467df0948bb9b10071
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13096&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tl-optional-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_" alt="variant">
                 </a>
